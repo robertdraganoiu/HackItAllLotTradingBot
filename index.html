@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="mystyle.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lot Banking</title>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCNEvSz_EEN5KcpXUTlg31qK-fIR1O5vSQ",
+    authDomain: "hackexchangeratedb.firebaseapp.com",
+    projectId: "hackexchangeratedb",
+    storageBucket: "hackexchangeratedb.appspot.com",
+    messagingSenderId: "194453264366",
+    appId: "1:194453264366:web:456580429c30992c1be0ff",
+    measurementId: "G-LFGMHKFDZZ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="app.js" defer></script>
+<script src="showCurrencies.js" defer></script>
+
+</head>
+
+<body>  
+  <section id="whenSignedOut">
+    <div class="container">
+    
+      <section id="content">
+      
+        <h1>Welcome to LotTrading!</h1>
+        <p>
+          <input id="email" type="email" placeholder="Email..." id="email_field"/>
+          <input id="password" type="password" placeholder="Password..." id="password_field"/>
+
+          
+        </p>
+        <p>
+          <button id="loginBut" >Login to account</button>
+          
+          <button id="signInBtn" class="btn btn-primary">Sign in with Google</button>
+        </p>
+
+        <p><a href="#">Lost your password?</a></p>
+				<p><a href="#">Register</a></p> 
+        
+
+      </section>
+      
+      
+    </div>
+
+    <div class="w3-container w3-padding-64 w3-center" id="team">
+      <h2>OUR TEAM</h2>
+      <p>Meet the team - our office rats 🤓</p>
+      
+      <div class="w3-row"><br>
+      
+      <div class="w3-quarter">
+        <img src="images/johny.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+        <h3>Vlad Ionescu</h3>
+        <p>Backend Developer</p>
+      </div>
+      
+      <div class="w3-quarter">
+        <img src="images/robert.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+        <h3>Robert Draganoiu</h3>
+        <p>Database Master</p>
+      </div>
+      
+      <div class="w3-quarter">
+        <img src="images/vlad.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+        <h3>Vlad Sandu</h3>
+        <p>Fullstack Developer</p>
+      </div>
+
+      <div class="w3-quarter">
+        <img src="images/robo.png" alt="Boss" style="width:46%" class="w3-circle w3-hover-opacity">
+        <h3>LotBot</h3>
+        <p>CEO</p>
+      </div>
+      
+      </div>
+    </div>
+      
+
+    <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+
+      <div class="w3-quarter">
+      <h2>Our Work</h2>
+      <p>Here you can find some of our client’s comments, opinions and feedback on our app. We want to have you in our family!</p>
+      </div>
+      
+      <div class="w3-quarter">
+      <div class="w3-card w3-white">
+        <div class="w3-container">
+        <h3>Michael Jordan</h3>        
+        <p>"I love this app! The customer service is very responsive. They are prompt, helpful and even fun sometimes. 
+          I’ve been working with them for 2 years already and I will not stop soon! I highly recommend it!"</p>        
+        </div>
+        </div>
+      </div>
+      
+      <div class="w3-quarter">
+      <div class="w3-card w3-white">
+        <div class="w3-container">
+        <h3>Jon Snow</h3>        
+        <p>"Winter is coming! And what to do better before winter, rather than winning some money with LotTrading!        </p>
+    
+        <p>I would recomend this application to my family, my friends from The Wall, and also to my queen!"</p>
+        </div>
+        </div>
+      </div>
+      
+      <div class="w3-quarter">
+      <div class="w3-card w3-white">
+        <div class="w3-container">
+        <h3>Harry Potter</h3>
+        
+        <p>"Lately I haven’t used spells. This app is already making  my wishes come true. Fast money without any effort, what could you need more?
+          I will also recommend it to Hermione and Ron, they will like it for sure!"
+        </p>
+        
+        </div>
+        </div>
+      </div>
+      
+      </div>
+
+      <div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
+        <div class="w3-row">
+          <div class="w3-col m5">
+          <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
+            <h3>Splaiul Independentei 290</h3>
+            <p>If you are good enough, maybe you'll recieve an autograph from LotBot :D</p>
+            <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>  Bucharest, Romania</p>
+            <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  +40 748 555 555</p>
+            <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  lotulsuperior@gmail.com</p>
+            
+          </div>
+          <div class="w3-col m7">
+            <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
+            <div class="w3-section">      
+              <label>Name</label>
+              <input class="w3-input" type="text" name="Name" required>
+            </div>
+            <div class="w3-section">      
+              <label>Email</label>
+              <input class="w3-input" type="text" name="Email" required>
+            </div>
+            <div class="w3-section">      
+              <label>Message</label>
+              <input class="w3-input" type="text" name="Message" required>
+            </div>  
+            <input class="w3-check" type="checkbox" checked name="Like">
+            <label>I Like it!</label>
+            <hr>
+            <button  class="w3-button">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  </section>
+  
+
+  <section id="whenSignedOut">
+    
+
+  </section>
+  
+
+  <section id="whenSignedIn" hidden="true">
+    <div class="grid-container">
+      <div class="header">
+        
+        <div style="display: inline-block;">
+          <div id="userDetails" style="text-align: center;"></div>
+          <h3 style="text-align: center;">LotBot here. How may I help you?</h3>
+        </div>
+        
+        <div>
+          <img src="images/robo.png" alt="Boss" style="width:10%;" class="w3-circle">
+          
+        </div>
+        
+      </div>
+
+      <div class="left" style="margin-left: 30px;">
+  
+        <h2 id=openAccountsLabel>Open accounts: x</h2>
+        <h3 id=acc0 style="margin-bottom: 0;"></h3>
+        <h3 id=acc1 style="margin-bottom: 0;"></h3>
+        <h3 id=acc2 style="margin-bottom: 0;"></h3>
+
+        <div style="display: flex; justify-content: left;">
+          <h4>Add new account:</h4>
+          <p style=" text-indent: 5mm;">
+            <select name="accountMoneyType" id="accountMoneyType">
+              <option value="RON">RON</option>
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="CHF">CHF</option>
+              <option value="GBP">GBP</option>
+            </select>
+            <button onclick="addAccountOnClick()" id="addAccountBtn" style="margin-top: 2px;">Add account</button>
+          </p>
+        </div>
+        
+      </div>
+      
+      <div class="center" >             
+    
+        <h2 id=openAccountsLabel>Manual Operations: </h2>
+        <div style="display: flex; justify-content: left;">
+          <h4>Add/Extract Money:</h4>
+          <p >
+            <div style="text-indent: 5mm;">
+              <ul style="list-style: none; text-indent: 5mm;">
+                <li style="margin-bottom: 5px;"><input placeholder="Account number..." id="add_money_acc_num"/></li>
+                <li><input placeholder="Amount..." id="add_money_amount"/></li>
+              </ul>
+            </div>                 
+            <div style="display: inline-block;">
+              <button onclick="addMoneyOnclick()" id="addMoneyBtn">Add money</button>
+              <button onClick="extractMoneyOnclick()" id="takeOutMoneyBtn">Extract money</button>
+            </div>
+            
+          </p>
+        </div>
+        
+  
+        <h4>Exchange Money From Account:</h4>
+        <p>
+          <input placeholder="Account number..." id="transfer_money_acc_num"/>
+          <label for="Money">To:</label>
+          <select onchange="moneyTypeChange()" name="moneyType" id="moneyType">
+            <option value="RON">RON</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="CHF">CHF</option>
+            <option value="GBP">GBP</option>
+          </select>
+          <button onclick="checkCourseOnClick()" id="checkCourseBtn" >Check course</button>
+          <label id="coursePlaceHolder">0.0000</label>
+          <button onclick="changeMoney()" id="changeMoneyBtn" >Change Money</button>
+        </p>
+
+        <div style="display: flex; justify-content: left;">
+          <h4 style="margin-top: 22px;">See all exchange currencies:</h4>
+          <p style="text-indent: 5mm;">
+            <select name="moneyType" id="cur">
+              <option value="RON">RON</option>
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="CHF">CHF</option>
+              <option value="GBP">GBP</option>
+            </select>
+            <button id="get-currency" style="margin-top: 14px;">See currencies</button>
+          </p>
+        </div>
+  
+        
+  
+      </div>
+
+      <div class="right">
+        <section>
+          <h2 id=openAccountsLabel>Exchange Bot Settings: </h2>
+    
+          <div style="margin-bottom: 0;">            
+            <h5 style="display: inline-block;">Enabled: </h5>
+            <input type="checkbox" id="enabledCheck">           
+          </div>
+    
+          <div>
+            <h5 style="display: inline-block;">Wait for exchange approval: </h5>
+            <input type="checkbox" id="waitApprovalCheck">
+          </div>
+    
+          <div>
+            <h5 style="display: inline-block;">Check interval (days): <h5> 
+            <input type="range" min="1" max="14" value="3" class="slider" id="botCheckRate" onchange="sliderValueChange(this.value)">
+            <label id="sliderValue">3</label>
+          </div>
+    
+          <button onclick="saveBotChanges()" id="saveChangesBtn" >Save Changes</button>
+          <button id="signOutBtn" class="btn btn-primary" style="float:inherit; top: 20%">Sign Out</button>
+        </section>
+      </div>
+    </div>   
+  
+    
+      
+    
+    <hr>
+    
+
+  </section> 
+
+  
+<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+  <h4>Follow Us</h4>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+  <a class="w3-button w3-large w3-teal" href="https://www.instagram.com/lotul_national_acs/?hl=ro" title="Instagram"><i class="fa fa-instagram"></i></a>
+  <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+  <p>Sponsored by <a href="https://www.bcr.ro/ro/george-initial">GEORGE <a></p>
+  <img  src="images/george.png" alt="George" style="width: 120px; height: 70px; display: block; margin-left: auto; margin-right: auto;">
+  
+
+  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
+    <a class="w3-button w3-theme" onclick="topFunction()"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+</footer>
+
+
+</body>
+
+</html>
